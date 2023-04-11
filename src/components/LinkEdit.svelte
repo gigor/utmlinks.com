@@ -76,6 +76,7 @@
         >
             {param.label}
             <button 
+                slot="actions"
                 on:click={()=>param.used = false}
                 class="py-1 px-2 text-lg"
             >&times;</button>
@@ -117,11 +118,14 @@
     <div class="whitespace-nowrap flex flex-nowrap gap-2">
         <InputText value={result} class="flex-1">
             Your Link
+
+            <Button 
+                slot="actions"
+                on:click={handleCopy}
+            >Copy</Button>
         </InputText>
 
-        {#if link}
-            <Button class="self-end" on:click={handleCopy}>Copy</Button>
-        {/if}
+
     </div>
 </div>
 
