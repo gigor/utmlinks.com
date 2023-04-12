@@ -67,8 +67,13 @@ export class Link {
 
     get url () {
         const protocol = !this.base || this.base.indexOf('://') > -1 ? '' : 'https://';
-        
-        return new URL(`${protocol}${this.base}${this.params.filter(p=>p.used && p.value).length > 0 ? '?' : ''}${this.params.filter(p=>p.used && p.value).map(p=>`${p.name}=${p.value}`).join('&')}`).href
+        let str = `${protocol}${this.base}${this.params.filter(p=>p.used && p.value).length > 0 ? '?' : ''}${this.params.filter(p=>p.used && p.value).map(p=>`${p.name}=${p.value}`).join('&')}`;
+        try {
+            return new URL(str).href
+        } catch (e) {
+            console.warn('invalid url', str, e);
+            return str
+        }
     }
     
     get markdown () {
