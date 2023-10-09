@@ -1,16 +1,18 @@
 {
-    "manifest_version": 2,
-    "name": "Link Builder",
-    "version": "1.0",
-    "description": "A simple extension to concatenate two text fields.",
-    "icons": {
-      "48": "icon.png"
-    },
-    "browser_action": {
-      "default_icon": "icon.png",
-      "default_popup": "index.html",
-      "default_title": "Concatenate Extension"
-    },
-    "permissions": [],
-    "content_security_policy": "script-src 'self' 'unsafe-inline'; object-src 'self'"
+  "manifest_version": 3,
+  "name": "Concatenate Extension",
+  "version": "1.0",
+  "description": "A simple extension to concatenate two text fields.",
+  "icons": {
+    "48": "icon.png"
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Concatenate Extension"
+  },
+  "permissions": [],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'unsafe-inline'; object-src 'self'; default-src 'self'; img-src 'self' https: data:"
   }
+}

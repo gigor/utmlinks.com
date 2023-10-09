@@ -2,9 +2,10 @@
     import { onMount } from "svelte";
     import "../app.css";
     import { links } from "../stores/links";
+    import { install as installAnalytics} from '@utils/logs.js';
 
     onMount(() => {
-        console.log("mounted");
+        installAnalytics();
         document.addEventListener('blur', (e) => {
             $links = $links
         }, true);
