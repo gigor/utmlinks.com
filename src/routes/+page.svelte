@@ -5,11 +5,13 @@
     import Button from "../components/Button.svelte";
     import PageLayout from "@comp/PageLayout.svelte";
     import Faq from "@comp/FAQ.svelte";
+    import Seo from "@comp/Seo.svelte";
 
     let selectedIndex = 0;
 
 </script>
 
+<Seo />
 <PageLayout>
 <div class="flex flex-col gap-2 p-4 mx-auto max-w-3xl">
     <div class="flex justify-between">
