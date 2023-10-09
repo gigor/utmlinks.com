@@ -116,7 +116,6 @@ if (browser) {
 
     storage.getItem('links').then(data => {
         let d = JSON.parse(data) || {}
-        console.log('set from store', d);
 
         if (d.links?.length > 0) {
             links.set(new Links(d.links))
@@ -125,7 +124,6 @@ if (browser) {
         }
     }).then(() => {
         links.subscribe(value => {
-            console.log('set to store', value);
             storage.setItem('links', JSON.stringify(value))
         })
     });
