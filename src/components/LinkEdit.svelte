@@ -83,11 +83,18 @@
         </InputText>
     {/each}
 
-    <div class="flex gap-2 overflow-auto pb-4 -mr-4">
+    <div class="grid grid-cols-[auto_1fr] items-center gap-y-5 gap-x-2 overflow-auto pb-4 -mr-4">
         {#each link.params.filter(p=>!p.used) as param}
+
+            <div>
             <Button
                 on:click={()=>handleAdd(param)}
-            >+ {param.label}</Button>
+            >+ {param.label}
+            </Button>
+            </div>
+            <p>{param.description}</p>
+
+
         {/each}
     </div>
 
