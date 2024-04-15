@@ -66,7 +66,7 @@ export class Link {
     constructor ({label, base, params, link_type}) {
         this.label = label || '';
         this.base = base || '';
-        this.params = params || makeUTMParams(params);
+        this.params = makeUTMParams(params);
         this.linktype = link_type || 'web';
     }
 
