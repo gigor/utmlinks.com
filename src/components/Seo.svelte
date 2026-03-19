@@ -2,7 +2,7 @@
     import { page } from "$app/stores";
     import { env } from "$env/dynamic/public";
         
-    let head_title = $page?.data?.head_title || 'UTM Link Buider - Build & Collect your UTM Links for free';
+    let head_title = $page?.data?.head_title || 'UTM Link Builder - Build & Collect your UTM Links for free';
     let head_description = $page?.data?.head_description || 'Build, Collect, Reuse and share your UTM Links as text, html or markdown';
     let head_canonical = $page?.data?.head_canonical || `https://utmlinks.com${$page.url.pathname}`;
     let og_title = $page?.data?.og_title || head_title;
